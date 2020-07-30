@@ -35,4 +35,12 @@ public class OrderController {
 	public List<Order> getOrders(){
 		return orderSvc.getAllOrders();
 	}
+	
+	@GetMapping("/getorderbyname/{name}")
+	public Order getOrderByName(@PathVariable String name) {
+		return orderSvc.getOrderByName(name);
+	}
+	
+	
+	
 }

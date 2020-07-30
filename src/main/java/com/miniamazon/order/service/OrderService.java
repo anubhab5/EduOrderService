@@ -37,8 +37,9 @@ public class OrderService {
 		return orderRepo.findAll();
 	}
 
-	public Order findOrderByName(String name) {
-		Optional<Order> o = orderRepo.findByName(name);
+	public Order getOrderByName(String name) {
+		System.out.println(name);
+		Optional<Order> o = orderRepo.findByOrderDescription(name);
 		if (o.isPresent()) {
 			return o.get();
 		}
